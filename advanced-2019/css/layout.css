@@ -1,0 +1,14 @@
+body {
+
+}
+
+.site {
+    min-width: var(--layout-width, 60em);
+    margin: 0 auto;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

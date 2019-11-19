@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+ 
+    <div class="site">
+        
+            <i class="fas fa-star"></i>
+
+        <header class="site-header">
+            <div class="site-branding">
+                <h1><a href="/">{{ site.title }}</a></h1>
+                <p>{{ site.description }}</p>             
+            </div>
+
+            <nav class="nav"> 
+                <ul> 
+                {% for page in site.pages %}
+                    {% if page.title %}
+                        <li class="page-title-{{ page.url | slugify }}"><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-main">
+
+            {{ content }}
+        
+        </main>
+
+        <footer class="site-footer">
+            <p>{{  site.title }}</p> &copy; All right reserved
+        </footer>
+
+    </div> 
+
+</body>
+</html>
